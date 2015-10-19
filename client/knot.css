@@ -1,0 +1,19 @@
+.knot {
+  stroke: black;
+  fill: none;
+  stroke-linecap : round;
+  stroke-width: 1em;
+}
+
+.selected {
+  stroke: red;
+}
+
+.knot.tactile {
+  stroke: red;
+  stroke-width: 4em;
+  fill: none;
+  stroke-linecap : round;
+  stroke-opacity: 10%;
+}
+
