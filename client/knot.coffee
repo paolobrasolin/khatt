@@ -73,6 +73,15 @@ Template.knot.helpers
   knotPath: () ->
     "M"+@x+" "+@y+"L"+@x+" "+@y
 
+#    'doubletap svg': (event, template) ->
+#      console.log event
+#      targetClassList = event.target.classList.toString()
+#      if targetClassList is "parchment"
+#        point = event.center
+#        origin = event.target
+#        nux = point.x - origin.offsetLeft
+#        nuy = point.y - origin.offsetTop
+#        Meteor.call("createKnot", @_id, nux, nuy, 1, 0)
 
 #Template.cell.gestures
 #  'tap .cell.tactile': () ->

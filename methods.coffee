@@ -25,29 +25,19 @@
 
 
 Meteor.methods
-  createKnot: (id, x, y, s, r) ->
+  createKnot: (id, x, y) ->
     Knots.insert
       parchmentId: id
       x: x
       y: y
-      s: s
-      r: r
-#  emptySelection: (id) ->
-#    Diagrams.update id,
-#      $set:
-#        selection: []
-#  toggleCell: (c) ->
-#    s = Diagrams.findOne
-#      _id: c.diagramId
-#      selection: c._id
-#    if s
-#      Diagrams.update c.diagramId,
-#        $pull:
-#          selection: c._id
-#    else
-#      Diagrams.update c.diagramId,
-#        $push:
-#          selection: c._id
+      s: 1
+      r: 0
+  moveKnot: (id, x, y) ->
+    Knots.update id,
+      $set:
+        x: x
+        y: y
+
 #  moveCell: (id, x, y) ->
 #    ###
 #    j = Cells.findOne
@@ -83,6 +73,23 @@ Meteor.methods
 #      $set:
 #        x: x
 #        y: y
+    
+#  emptySelection: (id) ->
+#    Diagrams.update id,
+#      $set:
+#        selection: []
+#  toggleCell: (c) ->
+#    s = Diagrams.findOne
+#      _id: c.diagramId
+#      selection: c._id
+#    if s
+#      Diagrams.update c.diagramId,
+#        $pull:
+#          selection: c._id
+#    else
+#      Diagrams.update c.diagramId,
+#        $push:
+#          selection: c._id
 #  deleteCell: (id) ->
 #    Cells.remove id
 #  deleteCells: (idl) ->
